@@ -102,7 +102,7 @@ int main() {
 	//network outer
 	const int nOuter = 1;
 	const int nOuterPoints = 21;
-	const int nOuterShift = 11;  //interval [-20'480, 20480], 21 points, 20 linear segments, 1 << 11 = 2028 length of the segment
+	const int nOuterShift = 11;  //interval [-20'480, 20480], 21 points, 20 linear segments, 1 << 11 = 2048 length of the segment
 	const int nOuterLearningShift = 2;
 	//this is division by number of inner blocks, multiplication by 1 and division by 1 << 4
 	const short MultOuter = 1;
@@ -260,4 +260,5 @@ int main() {
 	sum /= (1 << 8);
 	printf("Averate error %d, target ranges [%d, %d]\n", sum, actualTargetMin, actualTargetMax);
 }
+
 
