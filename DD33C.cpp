@@ -105,7 +105,7 @@ int main() {
 	const int nOuterPoints = 21;
 	const int nOuterShift = 11;  //interval [-20'480, 20480], 21 points, 20 linear segments, 1 << 11 = 2048 length of the segment
 	const int nOuterLearningShift = 3;
-	//this is division by number of inner blocks, multiplication by 1 and division by 1 << 4
+	//this is division by number of inner blocks
 	const short MultOuter = 21;
 	const short DenomOuter = 7;
 
@@ -121,7 +121,6 @@ int main() {
 	//int left = mean - range;
 	//int right = mean + range;
 
-	//printf("%d %d\n", left, right);
 	int left = -10240;
 	int right = 10240;
 
@@ -131,7 +130,6 @@ int main() {
 	for (int i = 0; i < nInner * nFeatures; ++i) {
 		for (int j = 0; j < nInnerPoints; ++j) {
 			INNER[i][j] = rnd_range_fast(&seed16, left, right);
-			//printf("%d %d %d\n", i, j, INNER[i][j]);
 		}
 	}
 
@@ -141,7 +139,6 @@ int main() {
 	for (int i = 0; i < nInner; ++i) {
 		for (int j = 0; j < nOuterPoints; ++j) {
 			OUTER[i][j] = rnd_range_fast(&seed16, left, right);
-			//printf("%d %d %d\n", i, j, OUTER[i][j]);
 		}
 	}
 
@@ -793,3 +790,4 @@ int main() {
 //        assign LED = test;
 //
 //    endmodule
+
